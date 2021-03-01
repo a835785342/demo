@@ -3,6 +3,6 @@
     <bean id="book" class="spring.容器实现.Book">
         <property name="name" value="倚天屠龙记"/>
         <property name="author" value="金庸"/>
-        <property name="price" value="25.3"/>
+        <property name="price" value="25.4"/>
     </bean>
 </beans>

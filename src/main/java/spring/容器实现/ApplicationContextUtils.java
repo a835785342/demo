@@ -10,14 +10,18 @@ import java.util.List;
 
 public class ApplicationContextUtils {
 
-    private Document document;
+    private static Document document;
 
-    public ApplicationContextUtils() throws DocumentException {
+    static{
         SAXReader saxReader = new SAXReader();
-        this.document = saxReader.read(getClass().getResourceAsStream("/books.xml"));
+        try {
+            document = saxReader.read(ApplicationContextUtils.class.getResourceAsStream("/books.xml"));
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
     }
 
-    public <T> T getBean(String id, Class<T> tc) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public static <T> T getBean(String id, Class<T> tc) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         Element rootElement = document.getRootElement();
 
         List<Element> elements = rootElement.elements();
@@ -42,7 +46,7 @@ public class ApplicationContextUtils {
         return null;
     }
 
-    private <T> void setAttribute(Field[] declaredFields, T object, String name, String value) throws IllegalAccessException {
+    private static <T> void setAttribute(Field[] declaredFields, T object, String name, String value) throws IllegalAccessException {
         for (Field field : declaredFields) {
             field.setAccessible(true);
             if (name.equals(field.getName())) {
