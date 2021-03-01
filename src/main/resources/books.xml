@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans>
+    <bean id="book" class="spring.容器实现.Book">
+        <property name="name" value="倚天屠龙记"/>
+        <property name="author" value="金庸"/>
+        <property name="price" value="25.3"/>
+    </bean>
+</beans>
