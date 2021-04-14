@@ -7,6 +7,5 @@ public class Main {
         Book book = ApplicationContextUtils.getBean("book", Book.class);
         System.out.println(book);
 
-
     }
 }

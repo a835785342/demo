@@ -1,5 +1,6 @@
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.BeanUtils;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.math.BigDecimal;
 import java.util.Comparator;
@@ -21,6 +22,6 @@ public class Main {
     }
 
     private static void fixDayTimeData(JSONObject jsonObject) {
-
+        JdbcTemplate jdbcTemplate;
     }
 }
