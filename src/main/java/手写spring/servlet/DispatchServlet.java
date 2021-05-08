@@ -122,7 +122,6 @@ public class DispatchServlet extends HttpServlet {
     private void scanClass(String directory) {
 
         URL url = this.getClass().getClassLoader().getResource("/" + directory.replaceAll("\\.", "/"));
-
         File classDirectory = new File(url.getFile());
         for (File file : classDirectory.listFiles()) {
 
