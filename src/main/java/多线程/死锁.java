@@ -33,6 +33,8 @@ public class 死锁 {
         }
     }
 
+
+
     public static void main(String[] args) {
         死锁 sisuoa = new 死锁();
         死锁 sisuob = new 死锁();
